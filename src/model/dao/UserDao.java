@@ -34,7 +34,7 @@ public class UserDao {
 			sql+=" and password='"+user.getPassword()+"' ";
 		}
 		
-		System.out.println("sql��䣺======>"+sql);
+		System.out.println("sql语句：======>"+sql);
 		
 		DBManager db=new DBManager();
 		ResultSet rs=null;

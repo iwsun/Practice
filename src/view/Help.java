@@ -1,9 +1,13 @@
 package view;
 
 import javax.swing.*;
+
+import util.DBManager;
+
 import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 
 public class Help extends JFrame{
 	private JFrame jframe;//窗口对象
@@ -23,18 +27,25 @@ public class Help extends JFrame{
 	private void Help(){
 		// TODO Auto-generated method stub
 		area = new JTextArea();
-		File file = new File("G:\\eclipse1Workplace\\Practice\\src\\docs\\学生管理系统.txt");
+		String filePath = Help.class.getClassLoader().getResource("systemInfo.txt").getFile();
+		File file = new File(filePath);
 		Long filelength = file.length();
 		byte[] filecontent = new byte[filelength.intValue()];
-
+		FileInputStream in = null;
 		try {
-			FileInputStream in = new FileInputStream(file);
+			in = new FileInputStream(file);
 			in.read(filecontent);
-			area.setText(new String(filecontent,"GBK"));
-
-
+			area.setText(new String(filecontent,"UTF-8"));
 		}catch(Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				if( in != null ) {
+					in.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		font = new Font("楷体", Font.BOLD, 15);
 		area.setFont(font);

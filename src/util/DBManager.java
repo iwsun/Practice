@@ -39,7 +39,8 @@ public class DBManager {
 	public DBManager(){
 		Properties pro = new Properties();
 		try {
-			FileInputStream in = new FileInputStream("G:\\eclipse1Workplace\\Practice\\src\\resources\\config.properties");
+			String jdbcConfigFilePath = DBManager.class.getClassLoader().getResource("jdbc.properties").getFile();
+			FileInputStream in = new FileInputStream(jdbcConfigFilePath);
 			pro.load(in);
 			dirverName = pro.getProperty("driverName");
 			url = pro.getProperty("url");
@@ -117,9 +118,5 @@ public class DBManager {
 		}
 
 	}
-
-
-
-
 
 }

@@ -1,8 +1,9 @@
 package view;
-import controller.impl.StudentControllerImpl;
 import model.dao.StudentDao;
 import model.vo.Student;
 import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
+
+import Service.impl.StudentServiceImpl;
 
 import javax.swing.*;
 import java.awt.*;
@@ -70,7 +71,7 @@ class OutputTxt implements ActionListener{
 
 		}
 		if(e.getSource()==this.output){	// 判断是否是导出操作
-			StudentControllerImpl s=new StudentControllerImpl();
+			StudentServiceImpl s=new StudentServiceImpl();
 			StudentDao s1=new StudentDao();
 			list5=s1.queryallstudent();
 			try {

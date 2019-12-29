@@ -17,7 +17,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 
-import controller.impl.StudentControllerImpl;
+import Service.impl.StudentServiceImpl;
 import model.vo.Student;
 import util.DBManager;
 import util.ShowMessageUtil;
@@ -297,7 +297,7 @@ public class StudentDao {
 
 	public void insertfromtxt(String fname) throws IOException, SQLException {
 		List<Student> list2 = new ArrayList<Student>();
-		StudentControllerImpl sc = new StudentControllerImpl();
+		StudentServiceImpl sc = new StudentServiceImpl();
 		list2 = sc.ReadFromTxt(fname);
 		int i = 0;
 		for (i = 0; i < list2.size(); i++) {

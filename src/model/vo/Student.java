@@ -134,12 +134,12 @@ public class Student {
 	public static List<Student> students=new ArrayList<Student>();
 	
 	public String toString() {
-		return "学号:"+ sId+"\t" 
-				+"姓名:"+ sName+"\t"
-				+"性别:"+ sSex+"\t"
-				+"生日:"+ sBirthday+"\t"
-				+"省份:"+ sProvince+"\t"
-				+"爱好:"+ sHobby+"\t" 
-				+"电话:"+ sPhone;
+		return "瀛﹀彿:"+ sId+"\t" 
+				+"濮撳悕:"+ sName+"\t"
+				+"鎬у埆:"+ sSex+"\t"
+				+"鐢熸棩:"+ sBirthday+"\t"
+				+"鐪佷唤:"+ sProvince+"\t"
+				+"鐖卞ソ:"+ sHobby+"\t" 
+				+"鐢佃瘽:"+ sPhone;
 	} 
 }

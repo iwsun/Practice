@@ -1,8 +1,9 @@
 package view;
-import controller.impl.StudentControllerImpl;
 import model.dao.StudentDao;
 import model.vo.Student;
 import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
+
+import Service.impl.StudentServiceImpl;
 
 import javax.swing.*;
 import java.awt.*;
@@ -77,7 +78,7 @@ class ImportTxt implements ActionListener{
 			//filename=file.getPath();
 			StudentDao s=new StudentDao();
 			list3=s.queryallstudent();
-			StudentControllerImpl sc=new StudentControllerImpl();
+			StudentServiceImpl sc=new StudentServiceImpl();
 			try {
 				list4=sc.ReadFromTxt(filename);
 			} catch (IOException e1) {

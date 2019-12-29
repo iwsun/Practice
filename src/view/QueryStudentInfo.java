@@ -1,11 +1,12 @@
 package view;
 
 
-import controller.StudentController;
-import controller.impl.StudentControllerImpl;
 import model.dao.StudentDao;
 import model.vo.Student;
 import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
+
+import Service.StudentService;
+import Service.impl.StudentServiceImpl;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -305,7 +306,7 @@ public class QueryStudentInfo extends JFrame implements ActionListener {
 				}else{
 					String sid = table.getValueAt(selectedRowIndex, 0).toString();
 
-					StudentController studentController = new StudentControllerImpl();
+					StudentService studentController = new StudentServiceImpl();
 					boolean flag = studentController.deleteStudentController(sid);
 					if(flag){
 						JOptionPane.showMessageDialog(null, "删除学生信息成功","消息提示",JOptionPane.QUESTION_MESSAGE);
@@ -616,7 +617,7 @@ public class QueryStudentInfo extends JFrame implements ActionListener {
 			data[2] = studentProvinceContent.getText();
 			data[3] = studentSexContent.getText();
 
-			StudentController studentController = new StudentControllerImpl();
+			StudentService studentController = new StudentServiceImpl();
 			ResultSet rs = null;
 			rs = studentController.queryForCondition(data);
 			if(rs==null){
